@@ -7,13 +7,13 @@ namespace Memento;
 /// </summary>
 public class History
 {
-    private readonly Stack<EditorState> _states = new();
+    private readonly Stack<DocumentState> _states = new();
 
     /// <summary>
     /// Pushes a new memento onto the stack.
     /// </summary>
-    /// <param name="state">The <see cref="EditorState"/> to push.</param>
-    public void Push(EditorState state)
+    /// <param name="state">The <see cref="DocumentState"/> to push.</param>
+    public void Push(DocumentState state)
     {
         _states.Push(state);
     }
@@ -21,9 +21,11 @@ public class History
     /// <summary>
     /// Pops the most recent memento from the stack.
     /// </summary>
-    /// <returns>The most recent <see cref="EditorState"/>.</returns>
-    public EditorState Pop()
+    /// <returns>The most recent <see cref="DocumentState"/>.</returns>
+    public DocumentState Pop()
     {
-        return _states.Pop();
+        return _states.Count == 0 
+            ? null 
+            : _states.Pop();
     }
 }

@@ -6,21 +6,32 @@ namespace Memento
     {
         private static void Main()
         {
-            var editor = new Editor();
+            var document = new Document();
             var history = new History();
 
-            editor.Content = "a";
-            history.Push(editor.CreateState());
+            document.Content = "Title";
+            history.Push(document.CreateState());
 
-            editor.Content = "b";
-            history.Push(editor.CreateState());
+            document.FontName = "Aptos Display";
+            history.Push(document.CreateState());
 
-            editor.Content = "c";
-            history.Push(editor.CreateState());
-            editor.Restore(history.Pop());
-            editor.Restore(history.Pop());
+            document.FontSize = 14;
+            history.Push(document.CreateState());
 
-            Console.WriteLine(editor.Content);
+            Console.WriteLine("\nCurrent document...");
+            Console.WriteLine(document);
+
+            document.Restore(history.Pop());
+            document.Restore(history.Pop());
+
+            Console.WriteLine("\nUndo document...");
+            Console.WriteLine(document);
+
+            document.Restore(history.Pop());
+
+            Console.WriteLine("\nUndo document...");
+            Console.WriteLine(document);
+
             Console.ReadLine();
         }
     }
