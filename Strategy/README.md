@@ -55,3 +55,31 @@ The `IFilter` interface declares a method for applying a filter to an image file
 The `ImageStorage` class maintains a reference to both a compression strategy and a filter strategy and uses them to store an image file.
 
 - `Store(string fileName, ICompressor compressor, IFilter filter)`: Stores the image with the specified compression and filter strategies.
+
+### ChatExample
+
+#### Components
+
+- **Strategy**: `IEncryptionAlgorithm`
+- **Concrete Strategy**: `DesEncryptionAlgorithm`, `AesEncryptionAlgorithm`
+- **Context**: `ChatClient`
+
+#### Classes
+
+##### IEncryptionAlgorithm (Strategy)
+
+The `IEncryptionAlgorithm` interface declares a method for encrypting a message.
+
+##### DesEncryptionAlgorithm (Concrete Strategy)
+
+- `Encrypt(string message)`: Encrypts a message using the DES algorithm.
+
+##### AesEncryptionAlgorithm (Concrete Strategy)
+
+- `Encrypt(string message)`: Encrypts a message using the AES algorithm.
+
+##### ChatClient (Context)
+
+The `ChatClient` class maintains a reference to an encryption strategy and uses it to send a message.
+
+- `Send(string message)`: Sends a message using the specified encryption algorithm.
