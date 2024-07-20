@@ -18,6 +18,14 @@
          2. [ResizeCommand (Concrete Command)](#resizecommand-concrete-command)
          3. [BlackAndWhiteCommand (Concrete Command)](#blackandwhitecommand-concrete-command)
          4. [CompositeCommand (Composite Command)](#compositecommand-composite-command)
+   3. [Undoable Commands Example](#undoable-commands-example)
+      1. [Components](#components-3)
+      2. [Classes](#classes-2)
+         1. [IUndoableCommand (Undoable Command Interface)](#iundoablecommand-undoable-command-interface)
+         2. [UndoCommand (Undo Command)](#undocommand-undo-command)
+         3. [History (Caretaker)](#history-caretaker)
+         4. [BoldCommand (Concrete Undoable Command)](#boldcommand-concrete-undoable-command)
+         5. [HtmlDocument (Originator)](#htmldocument-originator)
 
 ### Summary
 
@@ -32,7 +40,7 @@ The Command Pattern is a behavioral design pattern that turns a request into a s
 
 ## Overview
 
-The following example demonstrates the Command Pattern in the context of customer management.
+The following examples demonstrate the Command Pattern in various contexts.
 
 ## Examples
 
@@ -106,3 +114,49 @@ Represents a composite command that can store and execute multiple commands.
 
 - `Add(ICommand command)`: Adds a command to the composite command.
 - `Execute()`: Executes all commands stored in the composite command.
+
+### Undoable Commands Example
+
+#### Components
+
+- **Undoable Command Interface**: `IUndoableCommand`
+- **Undo Command**: `UndoCommand`
+- **Caretaker**: `History`
+- **Concrete Undoable Command**: `BoldCommand`
+- **Originator**: `HtmlDocument`
+
+#### Classes
+
+##### IUndoableCommand (Undoable Command Interface)
+
+Represents a command that can be executed and undone.
+
+- `UnExecute()`: Undoes the command.
+
+##### UndoCommand (Undo Command)
+
+Represents a command for undoing the last executed command.
+
+- `Execute()`: Executes the undo operation by calling `UnExecute` on the last command in the history.
+
+##### History (Caretaker)
+
+Manages the history of undoable commands.
+
+- `Push(IUndoableCommand command)`: Adds a command to the history.
+- `Pop()`: Removes and returns the oldest command from the history.
+- `Size`: Gets the number of undoable commands in the history.
+
+##### BoldCommand (Concrete Undoable Command)
+
+Represents a command for making text bold in an HTML document.
+
+- `Execute()`: Executes the command to make text bold and stores the command in the history.
+- `UnExecute()`: Undoes the bold action by reverting the document content to its previous state.
+
+##### HtmlDocument (Originator)
+
+Represents an HTML document with editable content.
+
+- `Content`: Gets or sets the content of the document.
+- `MakeBold()`: Makes the content bold by wrapping it with `<b>` tags.
