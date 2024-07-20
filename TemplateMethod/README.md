@@ -1,18 +1,30 @@
 ﻿# Template Method Pattern
 
-### Summary
+1. [Summary](#summary)
+2. [Components](#components)
+4. [Examples](#examples)
+   1. [Financial Example](#financial-example)
+      1. [Components](#components-1)
+      2. [Classes](#classes)
+         1. [Task (Abstract Class)](#task-abstract-class)
+         2. [TransferMoneyTask (Concrete Class)](#transfermoneytask-concrete-class)
+         3. [GenerateReportTask (Concrete Class)](#generatereporttask-concrete-class)
+         4. [AuditTrail (Helper Class)](#audittrail-helper-class)
+   2. [Window Example](#window-example)
+      1. [Components](#components-2)
+      2. [Classes](#classes-1)
+         1. [Window (Abstract Class)](#window-abstract-class)
+         2. [PaintWindow (Concrete Class)](#paintwindow-concrete-class)
+
+## Summary
 
 The Template Method Pattern is a behavioral design pattern that defines the skeleton of an algorithm in a method, deferring some steps to subclasses. It allows subclasses to redefine certain steps of an algorithm without changing its structure.
 
-### Components
+## Components
 
 - **Abstract Class**: Defines the template method and the abstract steps.
 - **Concrete Class**: Implements the abstract steps defined in the Abstract Class.
 - **Helper Class**: Provides additional functionality used by the Abstract Class.
-
-## Overview
-
-The following example demonstrates the Template Method Pattern in the context of financial tasks with an audit trail.
 
 ## Examples
 

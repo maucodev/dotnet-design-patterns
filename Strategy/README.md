@@ -1,18 +1,35 @@
 ﻿# Strategy Pattern
 
-### Summary
+1. [Summary](#summary)
+2. [Components](#components)
+4. [Examples](#examples)
+   1. [ImageStorageExample](#imagestorageexample)
+      1. [Components](#components-1)
+      2. [Classes](#classes)
+         1. [ICompressor (Strategy)](#icompressor-strategy)
+         2. [IFilter (Strategy)](#ifilter-strategy)
+         3. [PngCompressor (Concrete Strategy)](#pngcompressor-concrete-strategy)
+         4. [JpegCompressor (Concrete Strategy)](#jpegcompressor-concrete-strategy)
+         5. [HighContrastFilter (Concrete Strategy)](#highcontrastfilter-concrete-strategy)
+         6. [BlackAndWhiteFilter (Concrete Strategy)](#blackandwhitefilter-concrete-strategy)
+         7. [ImageStorage (Context)](#imagestorage-context)
+   2. [ChatExample](#chatexample)
+      1. [Components](#components-2)
+      2. [Classes](#classes-1)
+         1. [IEncryptionAlgorithm (Strategy)](#iencryptionalgorithm-strategy)
+         2. [DesEncryptionAlgorithm (Concrete Strategy)](#desencryptionalgorithm-concrete-strategy)
+         3. [AesEncryptionAlgorithm (Concrete Strategy)](#aesencryptionalgorithm-concrete-strategy)
+         4. [ChatClient (Context)](#chatclient-context)
+
+## Summary
 
 The Strategy Pattern is a behavioral design pattern that allows you to define a family of algorithms, encapsulate each one as a separate class, and make them interchangeable. This pattern lets the algorithm vary independently from clients that use it.
 
-### Components
+## Components
 
 - **Strategy**: An interface common to all supported algorithms. Context uses this interface to call the algorithm defined by a Concrete Strategy.
 - **Concrete Strategy**: A class that implements the Strategy interface.
 - **Context**: A class that maintains a reference to a Strategy object and can use it to call the algorithm defined by the Strategy.
-
-## Overview
-
-The following example demonstrates the Strategy Pattern in the context of image storage with different compression and filter strategies.
 
 ## Examples
 

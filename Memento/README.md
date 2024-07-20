@@ -1,10 +1,18 @@
 ﻿# Memento Pattern
 
-### Summary
+1. [Summary](#summary)
+2. [Components](#components)
+3. [Overview](#overview)
+4. [Classes](#classes)
+   1. [Document (Originator)](#document-originator)
+   2. [DocumentState (Memento)](#documentstate-memento)
+   3. [History (Caretaker)](#history-caretaker)
+
+## Summary
 
 The Memento Pattern is a behavioral design pattern that allows an object to save and restore its state without exposing its implementation details. It is particularly useful for implementing undo mechanisms.
 
-### Components
+## Components
 
 - **Originator**: The object whose state needs to be saved and restored. It creates a memento containing a snapshot of its current state.
 - **Memento**: A value object that acts as a snapshot of the originator's state. It is immutable once created.

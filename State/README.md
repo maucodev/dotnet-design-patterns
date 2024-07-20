@@ -1,18 +1,30 @@
 ﻿# State Pattern
 
-### Summary
+1. [Summary](#summary)
+2. [Components](#components)
+4. [Examples](#examples)
+   1. [CanvasExample](#canvasexample)
+      1. [Components](#components-1)
+      2. [Classes](#classes)
+         1. [Canvas (Context)](#canvas-context)
+         2. [ITool (State)](#itool-state)
+         3. [SelectionTool, EraserTool, BrushTool (ConcreteState)](#selectiontool-erasertool-brushtool-concretestate)
+   2. [DirectionServiceExample](#directionserviceexample)
+      1. [Components](#components-2)
+      2. [Classes](#classes-1)
+         1. [DirectionService (Context)](#directionservice-context)
+         2. [ITravelMode (State)](#itravelmode-state)
+         3. [DrivingTravelMode, BicyclingTravelMode, TransitTravelMode, WalkingTravelMode (ConcreteState)](#drivingtravelmode-bicyclingtravelmode-transittravelmode-walkingtravelmode-concretestate)
+
+## Summary
 
 The State Pattern is a behavioral design pattern that allows an object to change its behavior when its internal state changes. It helps in managing state-specific behavior and makes the code more maintainable by encapsulating the state logic within state objects.
 
-### Components
+## Components
 
 - **Context**: The object whose behavior varies based on its state. It maintains a reference to a state object and delegates state-specific behavior to this state object.
 - **State**: An interface that declares the state-specific behavior. Concrete state classes implement this interface and define the behavior for a particular state.
 - **ConcreteState**: Concrete implementations of the state interface. Each class encapsulates the behavior associated with a particular state of the context.
-
-## Overview
-
-The following examples demonstrate the State Pattern in different contexts.
 
 ## Examples
 
