@@ -1,5 +1,24 @@
 ﻿# Command Pattern
 
+1. [Summary](#summary)
+2. [Components](#components)
+3. [Overview](#overview)
+4. [Examples](#examples)
+   1. [Customer Example](#customer-example)
+      1. [Components](#components-1)
+      2. [Classes](#classes)
+         1. [ICommand (Command Interface)](#icommand-command-interface)
+         2. [Button (Invoker)](#button-invoker)
+         3. [CustomerService (Receiver)](#customerservice-receiver)
+         4. [AddCustomerCommand (Concrete Command)](#addcustomercommand-concrete-command)
+   2. [Composite Commands Example](#composite-commands-example)
+      1. [Components](#components-2)
+      2. [Classes](#classes-1)
+         1. [ICommand (Command Interface)](#icommand-command-interface-1)
+         2. [ResizeCommand (Concrete Command)](#resizecommand-concrete-command)
+         3. [BlackAndWhiteCommand (Concrete Command)](#blackandwhitecommand-concrete-command)
+         4. [CompositeCommand (Composite Command)](#compositecommand-composite-command)
+
 ### Summary
 
 The Command Pattern is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you parameterize methods with different requests, delay or queue a request's execution, and support undoable operations.
