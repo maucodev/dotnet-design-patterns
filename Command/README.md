@@ -52,3 +52,38 @@ Represents a customer service that acts as a receiver in the Command Pattern.
 Represents a command for adding a customer, which is a concrete command in the Command Pattern.
 
 - `Execute()`: Executes the command to add a customer by calling `AddCustomer` on `CustomerService`.
+
+### Composite Commands Example
+
+#### Components
+
+- **Command Interface**: `ICommand`
+- **Concrete Commands**: `ResizeCommand`, `BlackAndWhiteCommand`
+- **Composite Command**: `CompositeCommand`
+
+#### Classes
+
+##### ICommand (Command Interface)
+
+Defines a command interface with an `Execute` method.
+
+- `Execute()`: Executes the command.
+
+##### ResizeCommand (Concrete Command)
+
+Represents a command for resizing, implementing the `ICommand` interface.
+
+- `Execute()`: Executes the command to resize.
+
+##### BlackAndWhiteCommand (Concrete Command)
+
+Represents a command for applying a black and white filter, implementing the `ICommand` interface.
+
+- `Execute()`: Executes the command to apply the black and white filter.
+
+##### CompositeCommand (Composite Command)
+
+Represents a composite command that can store and execute multiple commands.
+
+- `Add(ICommand command)`: Adds a command to the composite command.
+- `Execute()`: Executes all commands stored in the composite command.

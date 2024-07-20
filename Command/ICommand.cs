@@ -1,4 +1,4 @@
-﻿namespace Command.CustomerExample.Framework;
+﻿namespace Command;
 
 /// <summary>
 /// Defines a command interface with an Execute method.

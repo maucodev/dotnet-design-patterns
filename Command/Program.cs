@@ -1,4 +1,5 @@
 ﻿using System;
+using Command.CompositeCommandsExample;
 using Command.CustomerExample.Framework;
 using Command.CustomerExample.Implementation;
 
@@ -16,6 +17,14 @@ namespace Command
             };
 
             button.Click();
+
+            Console.ReadLine();
+
+            var composite = new CompositeCommand();
+
+            composite.Add(new ResizeCommand());
+            composite.Add(new BlackAndWhiteCommand());
+            composite.Execute();
 
             Console.ReadLine();
         }
