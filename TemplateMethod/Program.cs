@@ -1,5 +1,6 @@
 ﻿using System;
 using TemplateMethod.FinancialExample;
+using TemplateMethod.WindowExample;
 
 namespace TemplateMethod
 {
@@ -15,6 +16,12 @@ namespace TemplateMethod
 
             reportTask.Execute();
             
+            Console.ReadLine();
+
+            var paint = new PaintWindow();
+
+            paint.Close();
+
             Console.ReadLine();
         }
     }

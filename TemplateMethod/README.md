@@ -50,3 +50,27 @@ The `GenerateReportTask` class implements the task-specific logic for generating
 The `AuditTrail` class provides functionality to record an audit trail entry.
 
 - `Record()`: Records an audit trail entry.
+
+### Window Example
+
+#### Components
+
+- **Abstract Class**: `Window`
+- **Concrete Class**: `PaintWindow`
+
+#### Classes
+
+##### Window (Abstract Class)
+
+The `Window` class defines the template method `Close` which includes actions to be performed before and after removing the window from the screen.
+
+- `Close()`: Closes the window by invoking the closing and closed actions.
+- `OnClosing()`: Abstract method for actions when the window is closing, to be implemented by derived classes.
+- `OnClosed()`: Abstract method for actions when the window has closed, to be implemented by derived classes.
+
+##### PaintWindow (Concrete Class)
+
+The `PaintWindow` class implements the task-specific logic for closing a paint window.
+
+- `OnClosing()`: Executes actions to save changes when the window is closing.
+- `OnClosed()`: Executes actions to confirm changes are safe when the window has closed.
