@@ -1,6 +1,4 @@
-﻿using Observer.Shared;
-
-namespace Observer.SpreadSheetsExample;
+﻿namespace Observer.Shared;
 
 /// <summary>
 /// Represents the subject that holds a value and notifies observers of changes to the value.

@@ -12,6 +12,13 @@
          3. [Chart (Concrete Observer)](#chart-concrete-observer)
          4. [DataSource (Concrete Subject)](#datasource-concrete-subject)
          5. [SpreadSheet (Concrete Observer)](#spreadsheet-concrete-observer)
+   2. [Stock and Status Example](#stock-and-status-example)
+      1. [Components](#components-2)
+      2. [Classes](#classes-2)
+         1. [IObserver (Observer Interface)](#iobserver-observer-interface-1)
+         2. [Subject (Subject)](#subject-subject-1)
+         3. [StockListView (Concrete Observer)](#stocklistview-concrete-observer)
+         4. [StatusBar (Concrete Observer)](#statusbar-concrete-observer-1)
 
 ### Summary
 
@@ -26,11 +33,11 @@ The Observer Pattern is a behavioral design pattern that defines a one-to-many d
 
 ## Overview
 
-The following example demonstrates the Observer Pattern in the context of data updates.
+The following examples demonstrate the Observer Pattern in different contexts.
 
 ## Examples
 
-### Spread Sheets Example
+### Data Update Example
 
 #### Components
 
@@ -72,3 +79,40 @@ Represents the subject that holds a value and notifies observers of changes to t
 Represents an observer that displays updates on a spreadsheet.
 
 - `Update(int value)`: Called when the subject's state changes. Displays the new value on the spreadsheet.
+
+### Stock and Status Example
+
+#### Components
+
+- **Observer**: `IObserver`
+- **Concrete Observer**: `StockListView`, `StatusBar`
+- **Subject**: `Subject`
+- **Concrete Subject**: `DataSource`
+
+#### Classes
+
+##### IObserver (Observer Interface)
+
+Defines an interface for observers that need to be notified of changes.
+
+- `Update(int value)`: Called when the subject's state changes. The new value of the subject is passed as an argument.
+
+##### Subject (Subject)
+
+Represents the subject that maintains a list of observers and notifies them of changes.
+
+- `AddObserver(IObserver observer)`: Adds an observer to the list.
+- `RemoveObserver(IObserver observer)`: Removes an observer from the list.
+- `NotifyObservers(int value)`: Notifies all observers of a change in state. The new value is passed as an argument.
+
+##### StockListView (Concrete Observer)
+
+Represents an observer that displays updates on a stock list view.
+
+- `Update(int value)`: Called when the subject's state changes. Displays the new value on the stock list view.
+
+##### StatusBar (Concrete Observer)
+
+Represents an observer that displays updates on a status bar.
+
+- `Update(int value)`: Called when the subject's state changes. Displays the new value on the status bar.
