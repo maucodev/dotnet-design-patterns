@@ -1,5 +1,6 @@
 ﻿using System;
 using Mediator.UIExample.Application;
+using Mediator.UIObserverExample.Application;
 
 namespace Mediator
 {
@@ -14,6 +15,16 @@ namespace Mediator
             var dialog = new ArticlesDialogBox();
 
             dialog.SimulateUserInteraction();
+
+            Console.ReadLine();
+
+            //
+            // UI Observer Example
+            //
+
+            var articles = new Articles();
+
+            articles.SimulateUserInteraction();
 
             Console.ReadLine();
         }

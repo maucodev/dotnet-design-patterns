@@ -46,7 +46,7 @@ public class ArticlesDialogBox : DialogBox
     {
         // With this implementation, the problem arises that as the number of controls grows,
         // more control logic needs to be implemented. The way to solve this problem is by
-        // implementing the Mediator pattern, using the Observer pattern. This is demonstrated
+        // implementing the Mediator pattern, using the ArticlesEventHandler pattern. This is demonstrated
         // in the UIObserverExample code.
 
         if (control == _articlesListBox)
