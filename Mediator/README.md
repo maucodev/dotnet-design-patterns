@@ -24,6 +24,15 @@
          6. [TitleEventHandler (Concrete EventHandler)](#titleeventhandler-concrete-eventhandler)
          7. [ArticlesEventHandler (Concrete EventHandler)](#articleseventhandler-concrete-eventhandler)
          8. [Articles (Client)](#articles-client)
+   3. [SignUp Dialog Example](#signup-dialog-example)
+      1. [Components](#components-3)
+      2. [Classes](#classes-2)
+         1. [SignUpDialogBox (Mediator)](#signupdialogbox-mediator)
+         2. [ControlEventHandler (Concrete EventHandler)](#controleventhandler-concrete-eventhandler)
+         3. [UIControl (Colleague)](#uicontrol-colleague-2)
+         4. [TextBox (Concrete Colleague)](#textbox-concrete-colleague-2)
+         5. [CheckBox (Concrete Colleague)](#checkbox-concrete-colleague)
+         6. [Button (Concrete Colleague)](#button-concrete-colleague-2)
 
 ### Summary
 
@@ -154,3 +163,53 @@ Represents the articles UI component that contains a list box, text box, and but
 
 - `Articles()`: Initializes a new instance of the `Articles` class and sets up event handlers for the list box and text box controls.
 - `SimulateUserInteraction()`: Simulates user interaction with the articles component.
+
+### SignUp Dialog Example
+
+#### Components
+
+- **Mediator**: `SignUpDialogBox`
+- **Concrete EventHandler**: `ControlEventHandler`
+- **Colleague**: `UIControl`
+- **Concrete Colleagues**: `TextBox`, `CheckBox`, `Button`
+
+#### Classes
+
+##### SignUpDialogBox (Mediator)
+
+Manages the interaction between various UI controls in a sign-up dialog box.
+
+- `SignUpDialogBox()`: Initializes the dialog box and sets up event handlers for the controls.
+- `SimulateUserInteraction()`: Simulates user interaction with the dialog box to demonstrate the Mediator pattern.
+
+##### ControlEventHandler (Concrete EventHandler)
+
+Handles events for various UI controls in the sign-up dialog.
+
+- `ControlEventHandler(TextBox usernameTextBox, TextBox passwordTextBox, CheckBox agreeCheckbox, Button signUpButton)`: Initializes the event handler with the necessary controls.
+- `Handle()`: Enables or disables the sign-up button based on the state of the text boxes and the checkbox.
+
+##### UIControl (Colleague)
+
+Represents a base class for UI controls that manage a list of event handlers.
+
+- `AddEventHandler(IEventHandler eventHandler)`: Adds an event handler to the control.
+- `NotifyEventHandlers()`: Notifies all event handlers when an event occurs.
+
+##### TextBox (Concrete Colleague)
+
+Represents a text box UI control.
+
+- `string Content { get; set; }`: Gets or sets the content of the text box and notifies event handlers of changes.
+
+##### CheckBox (Concrete Colleague)
+
+Represents a checkbox UI control.
+
+- `bool IsEnabled { get; set; }`: Gets or sets a value indicating whether the checkbox is enabled and notifies event handlers of changes.
+
+##### Button (Concrete Colleague)
+
+Represents a button UI control.
+
+- `bool IsEnabled { get; set; }`: Gets or sets a value indicating whether the button is enabled and notifies event handlers of changes.

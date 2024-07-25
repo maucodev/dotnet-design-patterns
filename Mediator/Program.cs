@@ -1,4 +1,5 @@
 ﻿using System;
+using Mediator.SignUpDialogExample.Application;
 using Mediator.UIExample.Application;
 using Mediator.UIObserverExample.Application;
 
@@ -25,6 +26,16 @@ namespace Mediator
             var articles = new Articles();
 
             articles.SimulateUserInteraction();
+
+            Console.ReadLine();
+
+            //
+            // SignUp Dialog Example
+            //
+
+            var signUpDialog = new SignUpDialogBox();
+
+            signUpDialog.SimulateUserInteraction();
 
             Console.ReadLine();
         }
