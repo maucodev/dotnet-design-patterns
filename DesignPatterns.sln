@@ -22,7 +22,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Command", "Command\Command.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Observer", "Observer\Observer.csproj", "{0E745604-10A0-4455-A376-309BD34E72A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator", "Mediator\Mediator.csproj", "{F6F1430D-1B50-4FA3-9CE8-0F429786C86F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator", "Mediator\Mediator.csproj", "{F6F1430D-1B50-4FA3-9CE8-0F429786C86F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainResponsibility", "ChainResponsability\ChainResponsibility.csproj", "{282C29D7-616E-4024-B118-0B1181EECB82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,9 +64,16 @@ Global
 		{F6F1430D-1B50-4FA3-9CE8-0F429786C86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6F1430D-1B50-4FA3-9CE8-0F429786C86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6F1430D-1B50-4FA3-9CE8-0F429786C86F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{282C29D7-616E-4024-B118-0B1181EECB82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{282C29D7-616E-4024-B118-0B1181EECB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{282C29D7-616E-4024-B118-0B1181EECB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{282C29D7-616E-4024-B118-0B1181EECB82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{282C29D7-616E-4024-B118-0B1181EECB82} = {45A9B0D9-7145-4CEA-B44E-6AD08FC06E33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {860A0F5E-EA25-4413-BC87-606E692056E9}
