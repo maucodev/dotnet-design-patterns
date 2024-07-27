@@ -3,6 +3,7 @@ using Command.CompositeCommandsExample;
 using Command.CustomerExample.Framework;
 using Command.CustomerExample.Implementation;
 using Command.UndoableCommandsExample;
+using Command.VideoEditorExample;
 
 namespace Command
 {
@@ -10,6 +11,10 @@ namespace Command
     {
         private static void Main()
         {
+            //
+            // Customer Example
+            //
+
             var service = new CustomerService();
             var command = new AddCustomerCommand(service);
             var button = new Button(command)
@@ -21,6 +26,10 @@ namespace Command
 
             Console.ReadLine();
 
+            //
+            // Composite Command Example
+            //
+
             var composite = new CompositeCommand();
 
             composite.Add(new ResizeCommand());
@@ -28,6 +37,10 @@ namespace Command
             composite.Execute();
 
             Console.ReadLine();
+
+            //
+            // Undoable Command Example
+            //
 
             var history = new History();
             var document = new HtmlDocument();
@@ -43,6 +56,24 @@ namespace Command
             undoBoldCommand.Execute();
 
             Console.WriteLine(document.Content);
+
+            Console.ReadLine();
+
+            //
+            // Video Editor Example
+            //
+
+            var videoHistory = new VideoHistory();
+            var video = new Video();
+            var labelCommand = new LabelCommand(video, videoHistory);
+            var contrastCommand = new ContrastCommand(video, videoHistory);
+
+            labelCommand.Execute();
+            contrastCommand.Execute();
+            Console.WriteLine(video);
+            labelCommand.UnExecute();
+            contrastCommand.UnExecute();
+            Console.WriteLine(video);
 
             Console.ReadLine();
         }
