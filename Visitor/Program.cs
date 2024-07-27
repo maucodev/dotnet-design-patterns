@@ -1,4 +1,5 @@
 ﻿using System;
+using Visitor.AudioEditorExample;
 using Visitor.HtmlEditorExample;
 
 namespace Visitor
@@ -19,6 +20,16 @@ namespace Visitor
             document.Execute(new HighlightOperation());
 
             document.Execute(new PlainTextOperation());
+
+            Console.ReadLine();
+
+            //
+            // Audio Editor Example
+            //
+
+            var audioFile = new AudioFile();
+
+            audioFile.ApplyFilter(new NoiseReductionFilter());
 
             Console.ReadLine();
         }
