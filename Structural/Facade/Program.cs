@@ -1,5 +1,6 @@
 ﻿using System;
 using Facade.BasicExample;
+using Facade.SocialMediaManagementExample;
 
 namespace Facade
 {
@@ -14,6 +15,16 @@ namespace Facade
             var notificationService = new NotificationService();
 
             notificationService.Send("Hello", "iOS");
+
+            Console.ReadLine();
+
+            //
+            // Social Media Management Example
+            //
+
+            var twitterService = new TwitterService("appKey", "appSecret");
+            
+            twitterService.GetRecentTweets();
 
             Console.ReadLine();
         }
