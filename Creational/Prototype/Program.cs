@@ -12,10 +12,17 @@ namespace Prototype
             //
 
             var circleOne = new Circle(5);
-            var circleTwo = circleOne.Clone();
+            var contextMenu = new ContextMenu();
 
             circleOne.Render();
-            circleTwo.Render();
+            
+            contextMenu.Duplicate(circleOne);
+
+            Console.ReadLine();
+
+            //
+            // Video Editor Example
+            //
 
             Console.ReadLine();
         }

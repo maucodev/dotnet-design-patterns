@@ -1,4 +1,6 @@
-﻿namespace Prototype.BasicExample;
+﻿using System;
+
+namespace Prototype.BasicExample;
 
 /// <summary>
 /// Represents a context menu.
@@ -11,6 +13,8 @@ public class ContextMenu
     /// <param name="component">The component to duplicate.</param>
     public void Duplicate(IComponent component)
     {
+        Console.WriteLine("Duplicating a component");
+
         _ = component.Clone();
     }
 }
