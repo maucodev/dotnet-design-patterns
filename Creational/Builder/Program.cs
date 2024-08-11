@@ -1,6 +1,8 @@
 ﻿using System;
 using Builder.BasicExample.App;
 using Builder.BasicExample.Builders;
+using Builder.WordProcessor.App;
+using Builder.WordProcessor.Builders;
 
 namespace Builder
 {
@@ -24,6 +26,21 @@ namespace Builder
 
             presentation.Export(movieBuilder);
             _ = movieBuilder.GetMovie();
+
+            Console.ReadLine();
+
+            //
+            // Word Processor Example
+            //
+
+            var document = new Document();
+
+            document.Add(new Text("Hello"));
+            document.Add(new Image("icon.png"));
+
+            document.Export(new HtmlDocumentBuilder(), "page.html");
+
+            document.Export(new TextDocumentBuilder(), "plain.txt");
 
             Console.ReadLine();
         }
